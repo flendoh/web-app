@@ -65,7 +65,7 @@ export const ProfileEditPage = () => {
   };
 
   const header = (
-    <div className="flex align-items-center gap-2">
+    <div className="flex align-items-center gap-2 p-4">
       <i className="pi pi-user-edit text-2xl"></i>
       <h2 className="text-xl font-semibold m-0">Editar Perfil</h2>
     </div>
@@ -73,93 +73,83 @@ export const ProfileEditPage = () => {
 
   return (
     <div className="surface-ground min-h-screen py-4">
-      <div className="surface-card p-4 shadow-2 border-round w-full lg:w-8 mx-auto">
+      <div className="surface-card p-5 shadow-2 border-round w-full mx-auto">
         <Card header={header} className="border-none shadow-none">
-          <form onSubmit={handleSubmit}>
-            <div className="grid">
-              <div className="col-12 md:col-6">
-                <div className="field">
-                  <label htmlFor="fullName" className="block text-900 font-medium mb-2">
-                    Nombre Completo *
-                  </label>
-                  <InputText
-                    id="fullName"
-                    value={formData.fullName}
-                    onChange={(e) => handleChange('fullName', e.target.value)}
-                    className={classNames('w-full', { 'p-invalid': errors.fullName })}
-                    placeholder="Ingrese su nombre completo"
-                  />
-                  {getFormErrorMessage('fullName')}
-                </div>
+          <form onSubmit={handleSubmit} className="p-fluid">
+            <div className="flex flex-column gap-4">
+              <div className="field">
+                <label htmlFor="fullName" className="block text-900 font-medium mb-2">
+                  Nombre Completo *
+                </label>
+                <InputText
+                  id="fullName"
+                  value={formData.fullName}
+                  onChange={(e) => handleChange('fullName', e.target.value)}
+                  className={classNames('w-full', { 'p-invalid': errors.fullName })}
+                  placeholder="Ingrese su nombre completo"
+                />
+                {getFormErrorMessage('fullName')}
               </div>
               
-              <div className="col-12 md:col-6">
-                <div className="field">
-                  <label htmlFor="email" className="block text-900 font-medium mb-2">
-                    Email *
-                  </label>
-                  <InputText
-                    id="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleChange('email', e.target.value)}
-                    className={classNames('w-full', { 'p-invalid': errors.email })}
-                    placeholder="ejemplo@email.com"
-                  />
-                  {getFormErrorMessage('email')}
-                </div>
+              <div className="field">
+                <label htmlFor="email" className="block text-900 font-medium mb-2">
+                  Email *
+                </label>
+                <InputText
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => handleChange('email', e.target.value)}
+                  className={classNames('w-full', { 'p-invalid': errors.email })}
+                  placeholder="ejemplo@email.com"
+                />
+                {getFormErrorMessage('email')}
               </div>
               
-              <div className="col-12 md:col-6">
-                <div className="field">
-                  <label htmlFor="phone" className="block text-900 font-medium mb-2">
-                    Teléfono *
-                  </label>
-                  <InputText
-                    id="phone"
-                    value={formData.phone}
-                    onChange={(e) => handleChange('phone', e.target.value)}
-                    className={classNames('w-full', { 'p-invalid': errors.phone })}
-                    placeholder="+1 234 567 8900"
-                  />
-                  {getFormErrorMessage('phone')}
-                </div>
+              <div className="field">
+                <label htmlFor="phone" className="block text-900 font-medium mb-2">
+                  Teléfono *
+                </label>
+                <InputText
+                  id="phone"
+                  value={formData.phone}
+                  onChange={(e) => handleChange('phone', e.target.value)}
+                  className={classNames('w-full', { 'p-invalid': errors.phone })}
+                  placeholder="+1 234 567 8900"
+                />
+                {getFormErrorMessage('phone')}
               </div>
               
-              <div className="col-12 md:col-6">
-                <div className="field">
-                  <label htmlFor="licenseNumber" className="block text-900 font-medium mb-2">
-                    Número de Licencia *
-                  </label>
-                  <InputText
-                    id="licenseNumber"
-                    value={formData.licenseNumber}
-                    onChange={(e) => handleChange('licenseNumber', e.target.value)}
-                    className={classNames('w-full', { 'p-invalid': errors.licenseNumber })}
-                    placeholder="LIC-123456"
-                  />
-                  {getFormErrorMessage('licenseNumber')}
-                </div>
+              <div className="field">
+                <label htmlFor="licenseNumber" className="block text-900 font-medium mb-2">
+                  Número de Licencia *
+                </label>
+                <InputText
+                  id="licenseNumber"
+                  value={formData.licenseNumber}
+                  onChange={(e) => handleChange('licenseNumber', e.target.value)}
+                  className={classNames('w-full', { 'p-invalid': errors.licenseNumber })}
+                  placeholder="LIC-123456"
+                />
+                {getFormErrorMessage('licenseNumber')}
               </div>
               
-              <div className="col-12">
-                <div className="field">
-                  <label htmlFor="bio" className="block text-900 font-medium mb-2">
-                    Biografía
-                  </label>
-                  <InputTextarea
-                    id="bio"
-                    value={formData.bio}
-                    onChange={(e) => handleChange('bio', e.target.value)}
-                    rows={4}
-                    className="w-full"
-                    placeholder="Cuéntanos un poco sobre ti..."
-                    autoResize
-                  />
-                  <small className="text-600">
-                    Esta información será visible en tu perfil público
-                  </small>
-                </div>
+              <div className="field">
+                <label htmlFor="bio" className="block text-900 font-medium mb-2">
+                  Biografía
+                </label>
+                <InputTextarea
+                  id="bio"
+                  value={formData.bio}
+                  onChange={(e) => handleChange('bio', e.target.value)}
+                  rows={4}
+                  className="w-full"
+                  placeholder="Cuéntanos un poco sobre ti..."
+                  autoResize
+                />
+                <small className="text-600">
+                  Esta información será visible en tu perfil público
+                </small>
               </div>
             </div>
             

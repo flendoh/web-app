@@ -134,8 +134,6 @@ export const ProfileViewPage = () => {
                 <span>{profileData.joinDate}</span>
               </div>
             </div>
-          </div>
-            
             {profileData.bio && (
               <div className="col-12">
                 <Divider />
@@ -150,6 +148,7 @@ export const ProfileViewPage = () => {
                 </div>
               </div>
             )}
+          </div>
         </Card>
       </div>
     </div>
